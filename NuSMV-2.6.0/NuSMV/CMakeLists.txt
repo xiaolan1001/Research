@@ -64,6 +64,11 @@ if(PREFER_STATIC_LIBRARIES)
     list(INSERT CMAKE_FIND_LIBRARY_SUFFIXES 0 ${CMAKE_STATIC_LIBRARY_SUFFIX})
 endif()
 
+#2022/2/24 fixed build issues.
+# Expose nusmv-config.h to cudd for some feature checks.
+add_definitions(-DHAVE_CONFIG_H)
+include_directories("${CMAKE_BINARY_DIR}")
+
 add_subdirectory(${CUDD_SOURCE_DIR} ${CUDD_BUILD_DIR})
 
 if(ENABLE_MINISAT)
@@ -328,7 +333,8 @@ set(nusmv_core_libs # the order is relevant here
 nusmv_write_config_h(nusmv-config.h)
 install(FILES "${PROJECT_BINARY_DIR}/nusmv-config.h" DESTINATION include)
 
-add_definitions(-DHAVE_CONFIG_H)
+#2022/2/24 fixed build issues.
+#add_definitions(-DHAVE_CONFIG_H)
 
 
 # ----------------------------------------------------------------------
