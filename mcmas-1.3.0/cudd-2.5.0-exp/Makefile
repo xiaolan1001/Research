@@ -124,10 +124,11 @@ BDIRS	= cudd dddmp mtr st util epd
 DIRS	= $(BDIRS) obj
 
 #------------------------------------------------------------------------
+# 学者注，已将.PHONY : libobj修改为.PHONY : objlib
 
 .PHONY : build
 .PHONY : optimize_dec
-.PHONY : libobj
+.PHONY : objlib
 .PHONY : lint
 .PHONY : all
 .PHONY : clean

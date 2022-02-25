@@ -1,7 +1,7 @@
 %skeleton "lalr1.cc"                          /*  -*- C++ -*- */
 %require "2.4.1"
 %defines
-%define "parser_class_name" "mcmas_parser"
+%define api.parser.class {mcmas_parser}
 
 %code requires {
 #define USE(VALUE) /*empty*/
