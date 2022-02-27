@@ -12,7 +12,7 @@ bool is_valid_state(BDD state, vector<BDD> v);
 void 
 do_model_checking(bdd_parameters * para)
 {
-  if (options["quiet"] == 0 && options["uniform"] == 0)
+  if (options["quiet"] == 0 && options["uniform"] == 0) //"uniform==1"Use uniform semantics for model checking
     cout << "Checking formulae..." << endl;
 
   BDD fair_reach;

@@ -5,6 +5,7 @@
 
 using namespace std;
 
+//学者注：modal_formula类的构造函数
 modal_formula::modal_formula(atomic_proposition * obj1)
 {       // term
   op = 0;
@@ -73,78 +74,78 @@ modal_formula::to_string()
 string
 modal_formula::to_string_const() const
 {
-  if (op == 0)
+  if (op == 0) //p
     return ((atomic_proposition *) obj[0])->to_string();
-  else if (op == 1)
+  else if (op == 1) //obj[0] and obj[1]
     return "(" + ((modal_formula *) obj[0])->to_string() + " && " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 2)
+  else if (op == 2) //obj[0] or obj[1]
     return "(" + ((modal_formula *) obj[0])->to_string() + " || " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 3)
+  else if (op == 3) //not obj[0]
     return "(! " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 4)
+  else if (op == 4) //obj[0] -> obj[1]
     return "(" + ((modal_formula *) obj[0])->to_string() + " -> " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 5)
+  else if (op == 5) //TRUE
     return "TRUE";
-  else if (op == 10)
+  else if (op == 10) //AG obj[0]
     return "(AG " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 11)
+  else if (op == 11) //EG obj[0]
     return "(EG " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 12)
+  else if (op == 12) //AX obj[0]
     return "(AX " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 13)
+  else if (op == 13) //EX obj[0]
     return "(EX " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 14)
+  else if (op == 14) //AF obj[0]
     return "(AF " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 15)
+  else if (op == 15) //EF obj[0]
     return "(EF " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 16)
+  else if (op == 16) //A obj[0] U obj[1]
     return "A(" + ((modal_formula *) obj[0])->to_string() + " U " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 17)
+  else if (op == 17) //E obj[0] U obj[1]
     return "E(" + ((modal_formula *) obj[0])->to_string() + " U " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 30)
+  else if (op == 30) //K obj[0], obj[1]
     return "K(" + ((modal_formula *) obj[0])->to_string() + ", " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 31)
+  else if (op == 31) //GK obj[0], obj[1]
     return "GK(" + ((modal_formula *) obj[0])->to_string() + ", " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 32)
+  else if (op == 32) //GCK obj[0], obj[1]
     return "GCK(" + ((modal_formula *) obj[0])->to_string() + ", " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 40)
+  else if (op == 40) //O obj[0], obj[1]
     return "O(" + ((modal_formula *) obj[0])->to_string() + ", " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 42)
+  else if (op == 42) //DK obj[0], obj[1]
     return "DK(" + ((modal_formula *) obj[0])->to_string() + ", " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 45)
+  else if (op == 45) //<obj[0]>X obj[1]
     return "(<" + ((modal_formula *) obj[0])->to_string() + ">X " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 46)
+  else if (op == 46) //<obj[0]>F obj[1]
     return "(<" + ((modal_formula *) obj[0])->to_string() + ">F " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 47)
+  else if (op == 47) //<obj[0]>G obj[1]
     return "(<" + ((modal_formula *) obj[0])->to_string() + ">G " +
       ((modal_formula *) obj[1])->to_string() + ")";
-  else if (op == 48)
+  else if (op == 48) //<obj[0]> (obj[1] U obj[2])
     return "<" + ((modal_formula *) obj[0])->to_string() + ">(" +
       ((modal_formula *) obj[1])->to_string() + " U " +
       ((modal_formula *) obj[2])->to_string() + ")";
-  else if (op == 50)
+  else if (op == 50) //A obj[0]
     return "(A " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 51)
+  else if (op == 51) //E obj[0]
     return "(E " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 61)
+  else if (op == 61) //G obj[0]
     return "(G " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 62)
+  else if (op == 62) //F obj[0]
     return "(F " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 63)
+  else if (op == 63) //X obj[0]
     return "(X " + ((modal_formula *) obj[0])->to_string() + ")";
-  else if (op == 64)
+  else if (op == 64) //obj[0] U obj[1]
     return "(" + ((modal_formula *) obj[0])->to_string() + " U " +
       ((modal_formula *) obj[1])->to_string() + ")";
   else {
@@ -160,12 +161,12 @@ modal_formula::check_atomic_proposition(unsigned char type)
   // type=0: atomic proposition, type=1: agent, type=2: group, type=3: agent or group
   bool b1, b2, b3;
   switch (op) {
-  case 1:     // AND
-  case 2:     // OR
-  case 4:     // IMPLIES
-  case 16:      // AU
-  case 17:      // EU
-  case 64:      // LTL/CTL* path U
+  case 1:     // obj[0] AND obj[1]
+  case 2:     // obj[0] OR obj[1]
+  case 4:     // obj[0] IMPLIES obj[0]
+  case 16:      // A obj[0] U obj[1]
+  case 17:      // E obj[0] U obj[1]
+  case 64:      // LTL/CTL* path U: obj[0] U obj[1]
     b1 = ((modal_formula *) obj[0])->check_atomic_proposition(0);
     b2 = ((modal_formula *) obj[1])->check_atomic_proposition(0);
     return (b1 && b2);
@@ -253,7 +254,7 @@ modal_formula::check_formula(bdd_parameters * para)
 
   switch (op) {
   case 0:{      // leaf
-    name = ((atomic_proposition *) obj[0])->get_proposition();
+    name = ((atomic_proposition *) obj[0])->get_proposition(); //基类指针强制类型转换为派生类指针
     if(options["nobddcache"] == 0)
       if (para->BDD_cache->find(name) != para->BDD_cache->end())
         return ((*para->BDD_cache)[name]);

@@ -235,8 +235,8 @@ main(int argc, char *argv[])
 
   // Calculate the number of BDD variables for states and actions
   for (unsigned int i = 0; i < agents->size(); i++) {
-    states_count += (*agents)[i]->state_BDD_length();
-    actions_count += (*agents)[i]->actions_BDD_length();
+    states_count += (*agents)[i]->state_BDD_length(); //obvar_count + var_count
+    actions_count += (*agents)[i]->actions_BDD_length(); //log_2(actions->size())
   }
 
   // Calculate the position of every variable and every set of actions

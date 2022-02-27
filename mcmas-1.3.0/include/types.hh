@@ -433,13 +433,13 @@ class modal_formula:public Object
      61=G, 62=F, 63=X, 64=U,
    */
   unsigned char op;
-  Object *obj[3];
+  Object *obj[3]; //学者注：指针数组，数组存储指向Object类的指针
 public:
   modal_formula(atomic_proposition * obj1);	// term
   modal_formula(unsigned char o, modal_formula * f1);	// sigle operand formula
   modal_formula(unsigned char o, modal_formula * f1, modal_formula * f2);	// two operands formula
   modal_formula(unsigned char o, modal_formula * f1, modal_formula * f2, modal_formula * f3);	// three operands formula
-  ~modal_formula();
+  ~modal_formula(); //学者注：析构函数没有参数和返回值，在对象消亡时即自动被调用。
   unsigned char get_op();
   Object *get_operand(unsigned char i);
   string to_string();
