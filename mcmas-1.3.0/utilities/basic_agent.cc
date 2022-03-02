@@ -308,7 +308,7 @@ map< string, vector< bool > *>*basic_agent::get_action_indices()
 int
 basic_agent::allocate_BDD_2_variables(int start)
 {
-  set_var_index_begin(start);
+  set_var_index_begin(start); // var_index_begin = start
   int count = start;
 
   if (vec_obsvars != NULL)
@@ -326,7 +326,7 @@ basic_agent::allocate_BDD_2_variables(int start)
       count += l;
     }
 
-  set_var_index_end(count - 1);
+  set_var_index_end(count - 1); // var_index_end = count - 1
   return count;
 }
 
